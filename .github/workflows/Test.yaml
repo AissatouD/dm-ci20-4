@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Config
-        run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
+        run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php composer.phar install --no-scripts --no-progress
 
       - name: Unit testing
         run: make unit_test
@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Congig
-        run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
+        run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php composer.phar install --no-scripts --no-progress
 
       - name: Integration testing
         run: make integration_test
@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Config
-        run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
+        run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php composer.phar --no-scripts --no-progress
 
       - name: Functional testing
         run: make functional_test
