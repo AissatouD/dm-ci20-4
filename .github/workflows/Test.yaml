@@ -16,7 +16,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Congig
+      - name: Config
         run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php composer.phar install --no-scripts --no-progress
 
       - name: Integration testing
