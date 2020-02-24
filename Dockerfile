@@ -2,6 +2,7 @@ FROM composer:1.9.1 as vendors
 
 COPY ./composer.* /app/
 
+
 RUN composer install --ignore-platform-reqs --no-ansi --no-interaction --prefer-dist --no-dev --no-progress \
   --no-suggest --optimize-autoloader --no-scripts --quiet
 
@@ -37,3 +38,4 @@ COPY .docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=php /srv/api/public /srv/api/public
 
 WORKDIR /srv/api/public
+

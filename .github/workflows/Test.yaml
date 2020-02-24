@@ -1,0 +1,33 @@
+name: Launch tests
+on: push
+
+jobs:
+  Unit_testing:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Config
+        run: composer install
+
+      - name: Unit testing
+        run: make unit_test
+
+  Integration_testing:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Congig
+        run: composer install
+
+      - name: Integration testing
+        run: make integration_test
+
+  testFunctional:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Config
+        run: composer install
+
+      - name: Functional testing
+        run: make functional_test
